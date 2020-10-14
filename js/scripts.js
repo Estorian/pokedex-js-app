@@ -25,22 +25,29 @@ let pokemonRepository = (function () {
   function lookUp(queryName) {
     let pokeMatch = pokemonList.filter(pokemon => pokemon.name === queryName);
     return pokeMatch;
-    }
+  }
+
+  function addListItem(pokemon) {
+    let list = document.querySelector('.pokemon-list');
+    let listItem = document.createElement('li');
+    let button = document.createElement('button');
+    button.innerText = pokemon.name;
+    button.classList.add('pokeName');
+    listItem.appendChild(button);
+    list.appendChild(listItem);
+  }
 
   return {
     add: add,
     getAll: getAll,
-    lookUp: lookUp
+    lookUp: lookUp,
+    addListItem: addListItem
   };
 })();
 
-pokemonRepository.getAll().forEach(function(pokemon) {
-  message = '<p>' + pokemon.name + ' (height: ' + pokemon.height + 'm)';
-  if (pokemon.height > 1) {
-    message += ' That\'s a big boy!';
-  }
-  message += '</p>';
-  document.write(message);
-})
+pokemonRepository.getAll().forEach(function (pokemon) {
+  pokemonRepository.addListItem(pokemon);
+});
+
 
 console.log(pokemonRepository.lookUp("Squirtle"));

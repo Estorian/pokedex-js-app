@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+
+.background::before {
+  content:"";
+  background-image: url("https://archive-media-1.nyafuu.org/vp/image/1471/57/1471577967106.png");
+  background-size: cover;
+  position: absolute;
+  opacity: 0.25;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+
+
+h1 {
+  position:relative;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
+ul {
+  position:relative;
+  list-style-type: none;
+}
+
+.pokemon-list {
+  display: flex;
+}
+
+.pokeName {
+  list-style-type: none;
+  background-color: #b0170c;
+  color: white;
+  height: 40px;
+  width: 120px;
+  margin: 10px;
+  border-style: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
