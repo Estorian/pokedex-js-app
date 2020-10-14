@@ -33,8 +33,20 @@ let pokemonRepository = (function () {
     let button = document.createElement('button');
     button.innerText = pokemon.name;
     button.classList.add('pokeName');
+    detailsButtonListener(button, pokemon);
+//    button.addEventListener('click', function (event) {showDetails(pokemon);});
     listItem.appendChild(button);
     list.appendChild(listItem);
+  }
+
+  function detailsButtonListener(button, pokemon) {
+    button.addEventListener('click', function (event) {
+      showDetails(pokemon);
+    })
+  }
+
+  function showDetails(pokemon) {
+    console.log(pokemon);
   }
 
   return {
