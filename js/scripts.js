@@ -49,6 +49,7 @@ let pokemonRepository = (function () {
 
 //Loads the list of 150 pokemon from pokeapi.
   function loadList() {
+    showLoadingBar();
     return fetch(apiUrl).then(function (response) {
       return response.json();
     }).then(function (json) {
@@ -59,12 +60,15 @@ let pokemonRepository = (function () {
         };
         add(pokemon);
       });
+      hideLoadingBar();
     }).catch(function (e) {
       console.error(e);
+      hideLoadingBar();
     })
   }
 
   function loadDetails(item) {
+    showLoadingBar();
     let url = item.detailsUrl;
     return fetch(url).then(function (response) {
       return response.json();
@@ -72,8 +76,10 @@ let pokemonRepository = (function () {
       item.imageUrl = details.sprites.front_default;
       item.height = details.height;
       item.types = details.types;
+      hideLoadingBar();
     }).catch(function (e) {
       console.error(e);
+      hideLoadingBar();
     });
   }
 
@@ -87,12 +93,24 @@ let pokemonRepository = (function () {
   };
 })();
 
+
+
 pokemonRepository.loadList().then(function() {
   pokemonRepository.getAll().forEach(function (pokemon) {
     pokemonRepository.addListItem(pokemon);
   });
 });
 
+function showLoadingBar() {
+  let loadingBar = document.createElement('img');
+  loadingBar.src = 'img/loading.gif';
+  loadingBar.classList.add('loading-bar');
+  document.querySelector('body').appendChild(loadingBar);
+}
 
+function hideLoadingBar() {
+  let loadingBar = document.querySelector('.loading-bar');
+  loadingBar.parentElement.removeChild(loadingBar);
+}
 
 console.log(pokemonRepository.lookUp("Squirtle"));

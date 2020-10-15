@@ -44,6 +44,16 @@ ul {
   padding-left: 20px;
 }
 
+.loading-bar {
+  position:fixed;
+  height: 300px;
+  width: 300px;
+  top: 50%;
+  left: 50%;
+  margin-top: -150px;
+  margin-left: -150px;
+}
+
 @media all and (max-width: 500px) {
   h1 {
     position: relative;
@@ -58,5 +68,12 @@ ul {
 
   .pokeName {
     max-width: none;
+  }
+
+  .loading-bar {
+    width: 100px;
+    height: 100px;
+    margin-top: -50px;
+    margin-left: -50px;
   }
 }
