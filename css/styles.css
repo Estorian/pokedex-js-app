@@ -2,16 +2,17 @@
   box-sizing: border-box;
 }
 
-.background::before {
+.background-pokeball {
   content:"";
   background-image: url("https://archive-media-1.nyafuu.org/vp/image/1471/57/1471577967106.png");
   background-size: cover;
-  position: absolute;
+  position: fixed;
   opacity: 0.25;
   top: 0px;
   right: 0px;
   bottom: 0px;
   left: 0px;
+  z-index: -1;
 }
 
 
@@ -43,7 +44,7 @@ ul {
   text-align: left;
   padding-left: 20px;
 }
-
+/*
 .loading-bar {
   position:fixed;
   height: 300px;
@@ -52,9 +53,9 @@ ul {
   left: 50%;
   margin-top: -150px;
   margin-left: -150px;
-}
+} */
 
-#modal-container {
+/* #modal-container {
   display: none;
 }
 
@@ -70,9 +71,9 @@ ul {
   overflow:auto;
   display: grid;
   text-align: center;
-}
+} */
 
-.modal {
+/* .modal {
   margin:auto;
   display: inline-block;
   background: #ff7676;
@@ -80,17 +81,17 @@ ul {
   width: 100%;
   max-width: 700px;
   text-align: center;
-}
+} */
 
-.modal-close-button {
+  /* .modal-close-button {
   float: right;
   -webkit-appearance: none;
   border: 0;
   background: none;
   color: #777;
   text-decoration: underline;
-}
-
+  } */
+/* 
 @media all and (max-width: 500px) {
   h1 {
     position: relative;
@@ -113,4 +114,4 @@ ul {
     margin-top: -50px;
     margin-left: -50px;
   }
-}
+} */
