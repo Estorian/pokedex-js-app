@@ -7,7 +7,7 @@ let pokemonRepository = (function () {
     if (typeof(pokemon) === 'object') {
       pokemonList.push(pokemon);
     }
-    else {console.error('Invalid attempt to add non-object to pokemonList')};
+    else {console.error('Invalid attempt to add non-object to pokemonList')}
   }
 
 //returns pokemonList
@@ -83,9 +83,7 @@ let pokemonRepository = (function () {
     let content = modal.find('.modal-body');
     content.empty();
     loadDetails(pokemon).then(function (){
-      console.log(pokemon);
       let img = $('<img src="' + pokemon.imageUrl + '" class="img-fluid">');
-      console.log(img);
       let text = '<p>Height: ' + pokemon.height + '</p>';
       let typesList = '<p>Type(s): ' + pokemon.types[0].type.name;
       for (let i = 1; i < pokemon.types.length; i++) {
